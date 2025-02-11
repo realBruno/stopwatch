@@ -2,6 +2,21 @@
 const milliseconds = document.getElementById("milliseconds");
 milliseconds.style.display = "none";
 
+const seconds = document.getElementById("seconds");
+
+(function()
+{
+    let sec = 0;
+    timer = setInterval(() => 
+    {
+        seconds.innerHTML = (sec++).toString().padStart(2, "0");
+    }, 1000); // every onde second
+})();
+
+
+
+
+
 /* START, RESET, AND STOP FUNCTIONS */
 function start() {
     // show milliseconds
@@ -11,6 +26,10 @@ function start() {
 function reset() {
     // hide milliseconds
     milliseconds.style.display = "none";
+}
+
+function stop() {
+    clearInterval(timer);
 }
 
 /* *******************
