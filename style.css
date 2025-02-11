@@ -1,4 +1,4 @@
-/* ************* PRINCIPAL ************* */
+/* ************* MAIN ************* */
 *
 {
     margin: 0;
@@ -8,11 +8,12 @@
 body
 {
     background-color: rgb(255, 255, 255);
+    /* background wheat looked nice */
 }
 
 main
 {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@ main
     flex-direction: column;
 }
 
-/* ************* CONTADOR ************* */
+/* ************* COUNTER ************* */
 
 #time
 {
@@ -30,7 +31,7 @@ main
     font-size: 40px;
 }
 
-/* ************* BOTÕES DO TIMER ************* */
+/* ************* TIMER BUTTONS ************* */
 
 .buttons
 {
@@ -47,12 +48,14 @@ main
 
 #stop
 {
-    margin: 5px; 
+    margin-left: 5px;
+    margin-right: 5px; 
 }
 
 #div_buttons
 {   
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 0;
 }
 
@@ -63,12 +66,9 @@ button:hover
     box-shadow: 1px 1px 3px 3px rgba(0, 162, 255, 0.637);
 }
 
-/* ************* BOTÃO DARK/LIGHT MODE ************* */
+/* ************* DARK/LIGHT MODE BUTTON ************* */
 
-span
-{
-    margin-top: 20px;
-}
+/* dark button is not centered aligned. */
 
 #dark, #light
 {   

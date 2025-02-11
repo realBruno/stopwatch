@@ -1,14 +1,14 @@
-// mantém os milisegundos escondidos enquanto start não for pressionado
+// keep milliseconds hidden while start hasn't been pressed on
 const milliseconds = document.getElementById("milliseconds");
 milliseconds.style.display = "none";
 
 function reset() {
-    // esconde milisegundos
+    // hide milliseconds
     milliseconds.style.display = "none";
 }
 
 function start() {
-    // exibe milisegundos
+    // show milliseconds
     milliseconds.style.display = "initial";
 }
 
