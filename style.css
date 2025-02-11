@@ -7,7 +7,7 @@
 
 body
 {
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(255, 255, 255);
 }
 
 main
@@ -43,7 +43,6 @@ button
     font-size: 30px;
     margin: 5px;
     cursor: pointer;
-
     transition: all 0.4s;
 }
 
@@ -56,5 +55,9 @@ button:hover
 {
     background-color: rgba(250, 50, 117, 0.815);
     transform: scale(1.04);
-    box-shadow: 3px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 1px 3px 3px rgba(0, 162, 255, 0.637);
 }
+
+
+
+/* ************* FOOTER ************* */
