@@ -2,28 +2,29 @@
 const milliseconds = document.getElementById("milliseconds");
 milliseconds.style.display = "none";
 
-function reset() {
-    // hide milliseconds
-    milliseconds.style.display = "none";
-}
-
+/* START, RESET, AND STOP FUNCTIONS */
 function start() {
     // show milliseconds
     milliseconds.style.display = "initial";
 }
 
-/* ************ DARK & LIGHT MODE ************ */
+function reset() {
+    // hide milliseconds
+    milliseconds.style.display = "none";
+}
 
-function dark_mode()
-{
+/* *******************
+ * DARK & LIGHT MODE *
+ ******************* */
+
+function dark_mode() {
     document.body.style.background = "black";
-    document.getElementById("mode").innerHTML = 
+    document.getElementById("mode").innerHTML =
         `<button id="light" onclick="light_mode()">Light</button>`;
 }
 
-function light_mode()
-{
+function light_mode() {
     document.body.style.background = "white";
-    document.getElementById("mode").innerHTML = 
+    document.getElementById("mode").innerHTML =
         `<button id="dark" onclick="dark_mode()">Dark</button>`;
 }
