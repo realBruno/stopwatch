@@ -10,19 +10,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    
-        <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css">
 
     <link rel="icon" href="./img/icon.png">
 </head>
 
 <body>
-    
-    <main>
-        <span id="mode">
-            <button id="dark" onclick="dark_mode()">Dark</button>
-        </span>
 
+    <main>
+        
         <div id="time">
             <h1 id="hours">00:</h1>
             <h1 id="minutes">00:</h1>
@@ -30,17 +27,18 @@
             <h1 id="milliseconds">.00</h1>
         </div>
         
-        <div id="buttons">
-            <button id="start" onclick="start()">Start</button>
-            <button id="stop">Stop</button>
-            <button id="reset" onclick="reset()">Reset</button>
+        <div id="div_buttons">
+            <button class="buttons" id="start" onclick="start()">Start</button>
+            <button class="buttons" id="stop">Stop</button>
+            <button class="buttons" id="reset" onclick="reset()">Reset</button>
         </div>
         
-        <script src="script.js"></script>
-
-        <!-- <footer></footer> -->
+        <span id="mode">
+            <button id="dark" onclick="dark_mode()">Dark</button>
+        </span>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

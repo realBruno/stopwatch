@@ -30,9 +30,9 @@ main
     font-size: 40px;
 }
 
-/* ************* BOTÕES ************* */
+/* ************* BOTÕES DO TIMER ************* */
 
-button
+.buttons
 {
     background-color: rgb(250, 50, 117);
     color: white;
@@ -41,14 +41,19 @@ button
     padding: 20px 45px;
     font-weight: 700;
     font-size: 30px;
-    margin: 5px;
     cursor: pointer;
     transition: all 0.4s;
 }
 
-#buttons
+#stop
+{
+    margin: 5px; 
+}
+
+#div_buttons
 {   
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 0;
 }
 
 button:hover
@@ -58,6 +63,32 @@ button:hover
     box-shadow: 1px 1px 3px 3px rgba(0, 162, 255, 0.637);
 }
 
+/* ************* BOTÃO DARK/LIGHT MODE ************* */
 
+span
+{
+    margin-top: 20px;
+}
 
-/* ************* FOOTER ************* */
+#dark, #light
+{   
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#dark
+{
+    background-color: black;
+    color: white;
+}
+
+#light
+{
+    background-color: white;
+    color: black;
+}
