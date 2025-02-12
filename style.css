@@ -39,7 +39,7 @@ main
 
 /* ************* TIMER BUTTONS ************* */
 
-.buttons
+.lgt
 {
     background-color: rgb(250, 50, 117);
     color: white;
@@ -65,16 +65,34 @@ main
     padding: 0;
 }
 
-button:hover
+.lgt:hover /* ON LIGHT MODE */
 {
     background-color: rgba(250, 50, 117, 0.815);
     transform: scale(1.04);
     box-shadow: 1px 1px 3px 3px rgba(0, 162, 255, 0.637);
 }
 
-/* ************* DARK/LIGHT MODE BUTTON ************* */
+.drk
+{
+    background-color: rgb(212, 0, 255);
+    color: black;
+    border-style: none;
+    border-radius: 20px;
+    padding: 18px 40px;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
 
-/* dark button is not centered aligned. */
+.drk:hover /* ON DARK MODE */
+{
+    transform: scale(1.04);
+    box-shadow: 2px 2px 5px 1px rgb(255, 0, 221);
+    /* box shadow didn't satisfy me much. change it later (?) */
+}
+
+/* ************* DARK/LIGHT MODE BUTTON ************* */
 
 #mode
 {
@@ -104,6 +122,18 @@ button:hover
 {
     background-color: white;
     color: black;
+}
+
+#dark:hover
+{
+    transform: scale(1.04);
+    box-shadow: 1px 1px 3px 3px rgba(0, 162, 255);
+}
+
+#light:hover
+{
+    transform: scale(1.04);
+    box-shadow: 1px 1px 3px 3px rgb(255, 0, 255);
 }
 
 /* ALL BUTTONS */

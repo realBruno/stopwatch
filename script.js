@@ -4,8 +4,7 @@ let timer = null, start_time = 0,
 
 /* START, RESET, AND STOP FUNCTIONS */
 function start() {
-    if (!running)
-    {
+    if (!running) {
         start_time = Date.now() - elapsed;
         timer = setInterval(update, 10);
         running = true;
@@ -13,13 +12,12 @@ function start() {
 }
 
 function stop() {
-    if (running)
-    {
+    if (running) {
         clearInterval(timer);
         elapsed = Date.now() - start_time;
         running = false;
     }
-}    
+}
 
 function reset() {
     clearInterval(timer);
@@ -30,14 +28,14 @@ function reset() {
 }
 
 /* FUNCTION TO UPDATE TIME */
-function update(){
+function update() {
     const current_time = Date.now();
     elapsed = current_time - start_time;
 
-    let hours = Math.floor(elapsed/(1000 * 60 * 60)),
-        minutes = Math.floor(elapsed/(1000 * 60) % 60),
-        seconds = Math.floor(elapsed/1000 % 60),
-        milliseconds = Math.floor(elapsed % 1000/10);
+    let hours = Math.floor(elapsed / (1000 * 60 * 60)),
+        minutes = Math.floor(elapsed / (1000 * 60) % 60),
+        seconds = Math.floor(elapsed / 1000 % 60),
+        milliseconds = Math.floor(elapsed % 1000 / 10);
 
     hours = String(hours).padStart("2", 0);
     minutes = String(minutes).padStart("2", 0);
@@ -52,10 +50,42 @@ function dark_mode() {
     document.body.style.background = "black";
     document.getElementById("mode").innerHTML =
         `<button id="light" onclick="light_mode()">Light</button>`;
+
+    // adds "drk" class to main buttons and removes "lgt"
+    const start_button = document.getElementById("start");
+    const reset_button = document.getElementById("reset");
+    const stop_button = document.getElementById("stop");
+    start_button.classList.remove("lgt");
+    reset_button.classList.remove("lgt");
+    stop_button.classList.remove("lgt");
+    start_button.classList.add("drk");
+    reset_button.classList.add("drk");
+    stop_button.classList.add("drk");
+
+    // changes color of timer
+    const timer = document.getElementById("time");
+    timer.style.color = "rgb(212, 0, 255)";
+    
 }
 
 function light_mode() {
     document.body.style.background = "white";
     document.getElementById("mode").innerHTML =
-        `<button id="dark" onclick="dark_mode()">Dark</button>`;
+    `<button id="dark" onclick="dark_mode()">Dark</button>`;
+    
+    // adds "lgt" class to main buttons and removes "drk"
+    const start_button = document.getElementById("start");
+    const reset_button = document.getElementById("reset");
+    const stop_button = document.getElementById("stop");
+    
+    start_button.classList.remove("drk");
+    reset_button.classList.remove("drk");
+    stop_button.classList.remove("drk");
+    start_button.classList.add("lgt");
+    reset_button.classList.add("lgt");
+    stop_button.classList.add("lgt");
+
+    // changes color of timer
+    const timer = document.getElementById("time");
+    timer.style.color = "rgb(250, 50, 117)";
 }
