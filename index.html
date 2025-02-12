@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
+
+    <!-- RUBIK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
+    <!-- RUBIK MONO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" href="./img/icon.png">
 </head>
 
@@ -20,16 +24,13 @@
 
     <main>
         
-        <div id="time">
-            <h1 id="hours">00:</h1>
-            <h1 id="minutes">00:</h1>
-            <h1 id="seconds">00</h1>
-            <h1 id="milliseconds">.00</h1>
+        <div id="timer">
+            <h1 id="time">00:00:00:00</h1>
         </div>
         
         <div id="div_buttons">
             <button class="buttons" id="start" onclick="start()">Start</button>
-            <button class="buttons" id="stop">Stop</button>
+            <button class="buttons" id="stop" onclick="stop()">Stop</button>
             <button class="buttons" id="reset" onclick="reset()">Reset</button>
         </div>
         

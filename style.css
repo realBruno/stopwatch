@@ -3,6 +3,7 @@
 {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body
@@ -23,12 +24,18 @@ main
 
 /* ************* COUNTER ************* */
 
-#time
+#timer
 {
     color: rgb(250, 50, 117);
     display: flex;
     font-family: "Rubik", serif;
     font-size: 40px;
+}
+
+#time
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 1000;
 }
 
 /* ************* TIMER BUTTONS ************* */

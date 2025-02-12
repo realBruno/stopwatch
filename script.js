@@ -1,36 +1,54 @@
-// keep milliseconds hidden while start hasn't been pressed on
-const milliseconds = document.getElementById("milliseconds");
-milliseconds.style.display = "none";
-
-const seconds = document.getElementById("seconds");
-
-(function()
-{
-    let sec = 0;
-    timer = setInterval(() => 
-    {
-        seconds.innerHTML = (sec++).toString().padStart(2, "0");
-    }, 1000); // every onde second
-})();
-
-
-
-
+const time = document.getElementById("time");
+let timer = null,
+    start_time = 0,
+    elapsed = 0,
+    running = false;
 
 /* START, RESET, AND STOP FUNCTIONS */
 function start() {
-    // show milliseconds
-    milliseconds.style.display = "initial";
-}
-
-function reset() {
-    // hide milliseconds
-    milliseconds.style.display = "none";
+    if (!running)
+    {
+        start_time = Date.now() - elapsed;
+        timer = setInterval(update, 10);
+        running = true;
+    }
 }
 
 function stop() {
+    if (running)
+    {
+        clearInterval(timer);
+        elapsed = Date.now() - start_time;
+        running = false;
+    }
+}    
+
+function reset() {
     clearInterval(timer);
+    start_time = 0;
+    elapsed = 0;
+    running = false;
+    time.textContent = `00:00:00:00`;
 }
+
+/* FUNCTION TO UPDATE TIME */
+function update(){
+    const current_time = Date.now();
+    elapsed = current_time - start_time;
+
+    let hours = Math.floor(elapsed/(1000 * 60 * 60)),
+        minutes = Math.floor(elapsed/(1000 * 60) % 60),
+        seconds = Math.floor(elapsed/1000 % 60),
+        milliseconds = Math.floor(elapsed % 1000/10);
+
+    hours = String(hours).padStart("2", 0)
+    minutes = String(minutes).padStart("2", 0)
+    seconds = String(seconds).padStart("2", 0)
+    milliseconds = String(milliseconds).padStart("2", 0)
+
+    time.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`
+}
+
 
 /* *******************
  * DARK & LIGHT MODE *
