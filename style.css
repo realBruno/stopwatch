@@ -39,7 +39,7 @@ main
 
 /* ************* TIMER BUTTONS ************* */
 
-.lgt
+.lgt, .drk
 {
     background-color: rgb(250, 50, 117);
     color: white;
@@ -76,13 +76,6 @@ main
 {
     background-color: rgb(212, 0, 255);
     color: black;
-    border-style: none;
-    border-radius: 20px;
-    padding: 18px 40px;
-    font-weight: 700;
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 0.4s;
 }
 
 .drk:hover /* ON DARK MODE */
