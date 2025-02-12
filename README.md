@@ -1,2 +1,4 @@
 # stopwatch
-A stopwatch web application.
+A simple stopwatch web application with dark mode.
+
+![application interface](/img/counter.png)
