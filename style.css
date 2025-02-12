@@ -1,4 +1,5 @@
 /* ************* MAIN ************* */
+
 *
 {
     margin: 0;
@@ -9,15 +10,13 @@
 body
 {
     background-color: rgb(255, 255, 255);
-    /* background wheat looked nice */
 }
 
 main
 {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -46,7 +45,7 @@ main
     color: white;
     border-style: none;
     border-radius: 20px;
-    padding: 20px 45px;
+    padding: 18px 40px;
     font-weight: 700;
     font-size: 30px;
     cursor: pointer;
@@ -77,6 +76,13 @@ button:hover
 
 /* dark button is not centered aligned. */
 
+#mode
+{
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+}
+
 #dark, #light
 {   
     border-style: none;
@@ -98,4 +104,12 @@ button:hover
 {
     background-color: white;
     color: black;
+}
+
+/* ALL BUTTONS */
+
+button:focus, button:active
+{
+    outline: none;
+    box-shadow: none;
 }
