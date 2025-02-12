@@ -26,7 +26,7 @@ function reset() {
     start_time = 0;
     elapsed = 0;
     running = false;
-    time.textContent = `00:00:00:00`;
+    time.textContent = `00:00:00.00`;
 }
 
 /* FUNCTION TO UPDATE TIME */
@@ -44,7 +44,7 @@ function update(){
     seconds = String(seconds).padStart("2", 0);
     milliseconds = String(milliseconds).padStart("2", 0);
 
-    time.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+    time.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
 /* DARK & LIGHT MODE */
