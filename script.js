@@ -1,8 +1,6 @@
 const time = document.getElementById("time");
-let timer = null,
-    start_time = 0,
-    elapsed = 0,
-    running = false;
+let timer = null, start_time = 0,
+    elapsed = 0, running = false;
 
 /* START, RESET, AND STOP FUNCTIONS */
 function start() {
@@ -41,19 +39,15 @@ function update(){
         seconds = Math.floor(elapsed/1000 % 60),
         milliseconds = Math.floor(elapsed % 1000/10);
 
-    hours = String(hours).padStart("2", 0)
-    minutes = String(minutes).padStart("2", 0)
-    seconds = String(seconds).padStart("2", 0)
-    milliseconds = String(milliseconds).padStart("2", 0)
+    hours = String(hours).padStart("2", 0);
+    minutes = String(minutes).padStart("2", 0);
+    seconds = String(seconds).padStart("2", 0);
+    milliseconds = String(milliseconds).padStart("2", 0);
 
-    time.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`
+    time.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
 }
 
-
-/* *******************
- * DARK & LIGHT MODE *
- ******************* */
-
+/* DARK & LIGHT MODE */
 function dark_mode() {
     document.body.style.background = "black";
     document.getElementById("mode").innerHTML =
