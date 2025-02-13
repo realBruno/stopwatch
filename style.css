@@ -50,15 +50,14 @@ main
     border-radius: 20px;
     padding: 1rem 2rem;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
     transition: all 0.4s;
-    width: 145px;
+    width: 130px;
 }
 
 #start, #stop
 {
-    /* width: 130px; */
     margin-right: 5px;
 }
 
