@@ -3,7 +3,6 @@ let timer = null, start_time = 0, elapsed = 0;
 
 /* ************* START, RESET, AND STOP FUNCTIONS ************* */
 function start() {
-
     start_time = Date.now() - elapsed;
     timer = setInterval(update, 10);
 
@@ -14,7 +13,6 @@ function start() {
 }
 
 function stop() {
-
     clearInterval(timer);
     elapsed = Date.now() - start_time;
 
@@ -25,7 +23,6 @@ function stop() {
 }
 
 function reset() {
-
     clearInterval(timer);
     start_time = 0;
     elapsed = 0;
@@ -126,9 +123,25 @@ function light_mode() {
 
 const animation_timer = document.getElementById("timer");
 function make_bigger() {
-    animation_timer.style.fontSize = "2.5rem";
+    const media_440 = window.matchMedia("(max-width: 440px)");
+    const media_350 = window.matchMedia("(max-width: 350px)");
+
+    if (media_440)
+        animation_timer.style.fontSize = "2rem";
+    else if (media_350)
+        animation_timer.style.fontSize = "1.6rem";
+    else
+        animation_timer.style.fontSize = "2.5rem";       
 }
 
 function make_smaller() {
-    animation_timer.style.fontSize = "2rem";
+    const media_440 = window.matchMedia("(max-width: 440px)");
+    const media_350 = window.matchMedia("(max-width: 350px)");
+
+    if (media_440)
+        animation_timer.style.fontSize = "1.7rem";
+    else if (media_350)
+        animation_timer.style.fontSize = "1.5rem";
+    else
+        animation_timer.style.fontSize = "2rem";
 }
