@@ -155,7 +155,7 @@ button:focus, button:active
 
     .lgt, .drk
     {
-        padding: 1rem 0.5rem;
+        padding: 1rem 1rem;
         font-size: 1.2rem;
         width: 6rem;
     }
