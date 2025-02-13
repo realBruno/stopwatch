@@ -50,21 +50,22 @@ main
     border-radius: 20px;
     padding: 1rem 2rem;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 1.5625rem; /* equivalent to 25px */
     cursor: pointer;
     transition: all 0.4s;
-    width: 130px;
+    width: 8.125rem; /* equivalent to 130px */
 }
 
 #start, #stop
 {
-    margin-right: 5px;
+    margin-right: 0.3125rem; /* equivalent to 5px */
 }
 
 #div_buttons
 {   
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* 1.25rem -> 20px */
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
     padding: 0;
 }
 
@@ -103,9 +104,9 @@ main
 {   
     border-style: none;
     border-radius: 20px;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9375rem; /* equivalent to 15px */
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -134,10 +135,43 @@ main
     box-shadow: 1px 1px 3px 3px rgb(255, 0, 255);
 }
 
-/* ALL BUTTONS */
+/* ************* ALL BUTTONS *************   */
 
 button:focus, button:active
 {
     outline: none;
     box-shadow: none;
+}
+
+/* ************* RESPONSIVENESS ************* */
+/* IMPORTANT: responsiveness breaks at more or less 270px of width */
+
+@media(max-width: 440px)
+{   
+    #timer
+    {
+        font-size: 1.7rem;
+    }
+
+    .lgt, .drk
+    {
+        padding: 1rem 0.5rem;
+        font-size: 1.2rem;
+        width: 6rem;
+    }
+}
+
+@media(max-width: 350px)
+{   
+    #timer
+    {
+        font-size: 1.5rem;
+    }
+
+    .lgt, .drk
+    {
+        padding: 0.8rem 0.25rem;
+        font-size: 1.1rem;
+        width: 5rem;
+    }
 }
