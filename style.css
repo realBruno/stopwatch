@@ -10,15 +10,17 @@
 body
 {
     background-color: rgb(255, 255, 255);
+    height: 100vh;
 }
 
 main
 {
     width: 100%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 92vh;
 }
 
 /* ************* COUNTER ************* */
@@ -28,7 +30,7 @@ main
     color: rgb(250, 50, 117);
     display: flex;
     font-family: "Rubik", serif;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 #time
@@ -45,16 +47,15 @@ main
     color: white;
     border-style: none;
     border-radius: 20px;
-    padding: 18px 40px;
+    padding: 1rem 2rem;
     font-weight: 700;
     font-size: 30px;
     cursor: pointer;
     transition: all 0.4s;
 }
 
-#stop
+#start, #stop
 {
-    margin-left: 5px;
     margin-right: 5px; 
 }
 
@@ -74,15 +75,14 @@ main
 
 .drk
 {
-    background-color: rgb(212, 0, 255);
+    background-color: rgb(255, 255, 255);
     color: black;
 }
 
 .drk:hover /* ON DARK MODE */
 {
     transform: scale(1.04);
-    box-shadow: 2px 2px 5px 1px rgb(255, 0, 221);
-    /* box shadow didn't satisfy me much. change it later (?) */
+    box-shadow: 1px 1px 3px 3px rgb(255, 0, 255);
 }
 
 /* ************* DARK/LIGHT MODE BUTTON ************* */
@@ -91,7 +91,10 @@ main
 {
     display: flex;
     justify-content: end;
-    margin: 20px;
+    padding: 20px;
+    height: 80px;
+    position: absolute;
+    width: 100vw;
 }
 
 #dark, #light
