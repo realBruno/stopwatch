@@ -55,7 +55,6 @@ function update() {
 }
 
 /* ************* DARK & LIGHT MODE ************* */
-
 function dark_mode() {
     document.body.style.background = "black";
     document.getElementById("mode").innerHTML =
@@ -120,12 +119,12 @@ function light_mode() {
 }
 
 /* ************* TIMER ANIMATION ************* */
-
 const animation_timer = document.getElementById("timer");
 function make_bigger() {
     const media_440 = window.matchMedia("(max-width: 440px)");
     const media_350 = window.matchMedia("(max-width: 350px)");
 
+    /* handles media queries */
     if (media_440)
         animation_timer.style.fontSize = "2rem";
     else if (media_350)
@@ -137,7 +136,7 @@ function make_bigger() {
 function make_smaller() {
     const media_440 = window.matchMedia("(max-width: 440px)");
     const media_350 = window.matchMedia("(max-width: 350px)");
-
+    /* handles media queries */
     if (media_440)
         animation_timer.style.fontSize = "1.7rem";
     else if (media_350)
