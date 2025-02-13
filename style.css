@@ -54,6 +54,9 @@ main
     cursor: pointer;
     transition: all 0.4s;
     width: 8.125rem; /* equivalent to 130px */
+    
+    /* removes hightlight that happens on mobile devices */
+    -webkit-tap-highlight-color: transparent;
 }
 
 #start, #stop
@@ -109,6 +112,9 @@ main
     font-size: 0.9375rem; /* equivalent to 15px */
     cursor: pointer;
     transition: all 0.4s;
+
+    /* removes hightlight that happens on mobile devices */
+    -webkit-tap-highlight-color: transparent;
 }
 
 #dark
