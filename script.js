@@ -66,14 +66,14 @@ function dark_mode() {
     
     // adds "drk" class to main buttons and removes "lgt"
     const start_button = document.getElementById("start");
-    if (start_button) // checks if 'start' id exists
+    if (start_button) // checks if "start" id exists
     {
         start_button.classList.remove("lgt");
         start_button.classList.add("drk");
     }
     
     const stop_button = document.getElementById("stop");
-    if (stop_button) { // checks if 'stop' id exists
+    if (stop_button) { // checks if "stop" id exists
         stop_button.classList.remove("lgt");
         stop_button.classList.add("drk");
     }
@@ -89,7 +89,7 @@ function dark_mode() {
     localStorage.setItem("dark_mode_on", true);
 }
 
-// keeps dark mode on if user activated it in the last session;
+// keeps dark mode on if user activated it in the last session
 const dark_on = localStorage.getItem("dark_mode_on");
 if (dark_on)
     dark_mode();
@@ -101,13 +101,13 @@ function light_mode() {
 
     // adds "lgt" class to main buttons and removes "drk"
     const start_button = document.getElementById("start");
-    if (start_button) { // checks if 'start' id exists
+    if (start_button) { // checks if "start" id exists
         start_button.classList.remove("drk");
         start_button.classList.add("lgt");
     }
 
     const stop_button = document.getElementById("stop");
-    if (stop_button) { // checks if 'stop' id exists
+    if (stop_button) { // checks if "stop" id exists
         stop_button.classList.remove("drk");
         stop_button.classList.add("lgt");
     }
@@ -118,7 +118,7 @@ function light_mode() {
 
     document.getElementById("time").style.color = "rgb(250, 50, 117)";
 
-    // removes dark_mode_on "cookie"
+    // removes dark_mode_on localStorage item
     localStorage.removeItem("dark_mode_on");
 }
 
