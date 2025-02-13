@@ -53,11 +53,13 @@ main
     font-size: 30px;
     cursor: pointer;
     transition: all 0.4s;
+    width: 145px;
 }
 
 #start, #stop
 {
-    margin-right: 5px; 
+    /* width: 130px; */
+    margin-right: 5px;
 }
 
 #div_buttons
