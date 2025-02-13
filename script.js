@@ -58,11 +58,12 @@ function update() {
 }
 
 /* ************* DARK & LIGHT MODE ************* */
+
 function dark_mode() {
     document.body.style.background = "black";
     document.getElementById("mode").innerHTML =
-        `<button id="light" onclick="light_mode()">Light</button>`;
-
+    `<button id="light" onclick="light_mode()">Light</button>`;
+    
     // adds "drk" class to main buttons and removes "lgt"
     const start_button = document.getElementById("start");
     if (start_button) // checks if 'start' id exists
@@ -70,20 +71,28 @@ function dark_mode() {
         start_button.classList.remove("lgt");
         start_button.classList.add("drk");
     }
-
+    
     const stop_button = document.getElementById("stop");
     if (stop_button) { // checks if 'stop' id exists
         stop_button.classList.remove("lgt");
         stop_button.classList.add("drk");
     }
-
+    
     const reset_button = document.getElementById("reset");
     reset_button.classList.remove("lgt");
     reset_button.classList.add("drk");
-
+    
     // changes color of timer
     document.getElementById("time").style.color = "rgb(255, 255, 255)";
+    
+    // remembers that user activated dark mode
+    localStorage.setItem("dark_mode_on", true);
 }
+
+// keeps dark mode on if user activated it in the last session;
+const dark_on = localStorage.getItem("dark_mode_on");
+if (dark_on)
+    dark_mode();
 
 function light_mode() {
     document.body.style.background = "white";
@@ -108,6 +117,9 @@ function light_mode() {
     reset_button.classList.add("lgt");
 
     document.getElementById("time").style.color = "rgb(250, 50, 117)";
+
+    // removes dark_mode_on "cookie"
+    localStorage.removeItem("dark_mode_on");
 }
 
 /* ************* TIMER ANIMATION ************* */
