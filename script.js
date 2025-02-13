@@ -1,17 +1,16 @@
 const time = document.getElementById("time");
 let timer = null, start_time = 0, elapsed = 0;
 
-/* START, RESET, AND STOP FUNCTIONS */
+/* ************* START, RESET, AND STOP FUNCTIONS ************* */
 function start() {
 
     start_time = Date.now() - elapsed;
     timer = setInterval(update, 10);
 
     const make_it_stop = document.getElementById("start");
-    make_it_stop.setAttribute("onclick", "stop()");
+    make_it_stop.setAttribute("onclick", "stop(); make_bigger();");
     make_it_stop.id = "stop";
     make_it_stop.innerHTML = "Stop";
-
 }
 
 function stop() {
@@ -20,10 +19,9 @@ function stop() {
     elapsed = Date.now() - start_time;
 
     const make_it_start = document.getElementById("stop");
-    make_it_start.setAttribute("onclick", "start()");
+    make_it_start.setAttribute("onclick", "start(); make_bigger();");
     make_it_start.id = "start";
     make_it_start.innerHTML = "Start";
-
 }
 
 function reset() {
@@ -34,12 +32,14 @@ function reset() {
     time.textContent = `00:00:00.00`;
 
     const change_stop_to_start = document.getElementById("stop");
-    change_stop_to_start.setAttribute("onclick", "start()");
-    change_stop_to_start.id = "start";
-    change_stop_to_start.innerHTML = "Start";
+    if (change_stop_to_start) {
+        change_stop_to_start.setAttribute("onclick", "start(); make_bigger();");
+        change_stop_to_start.id = "start";
+        change_stop_to_start.innerHTML = "Start";
+    }
 }
 
-/* FUNCTION TO UPDATE TIME */
+/* ************* FUNCTION TO UPDATE TIME ************* */
 function update() {
     const current_time = Date.now();
     elapsed = current_time - start_time;
@@ -57,7 +57,7 @@ function update() {
     time.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
-/* DARK & LIGHT MODE */
+/* ************* DARK & LIGHT MODE ************* */
 function dark_mode() {
     document.body.style.background = "black";
     document.getElementById("mode").innerHTML =
@@ -70,14 +70,13 @@ function dark_mode() {
         start_button.classList.remove("lgt");
         start_button.classList.add("drk");
     }
-    
+
     const stop_button = document.getElementById("stop");
-    if (stop_button) // checks if 'stop' id exists
-    {
+    if (stop_button) { // checks if 'stop' id exists
         stop_button.classList.remove("lgt");
         stop_button.classList.add("drk");
     }
-    
+
     const reset_button = document.getElementById("reset");
     reset_button.classList.remove("lgt");
     reset_button.classList.add("drk");
@@ -93,22 +92,31 @@ function light_mode() {
 
     // adds "lgt" class to main buttons and removes "drk"
     const start_button = document.getElementById("start");
-    if (start_button) // checks if 'start' id exists
-    {
+    if (start_button) { // checks if 'start' id exists
         start_button.classList.remove("drk");
         start_button.classList.add("lgt");
     }
-    
+
     const stop_button = document.getElementById("stop");
-    if (stop_button) // checks if 'stop' id exists
-    {
+    if (stop_button) { // checks if 'stop' id exists
         stop_button.classList.remove("drk");
         stop_button.classList.add("lgt");
     }
-    
+
     const reset_button = document.getElementById("reset");
     reset_button.classList.remove("drk");
     reset_button.classList.add("lgt");
 
     document.getElementById("time").style.color = "rgb(250, 50, 117)";
+}
+
+/* ************* TIMER ANIMATION ************* */
+
+const animation_timer = document.getElementById("timer");
+function make_bigger() {
+    animation_timer.style.fontSize = "2.5rem";
+}
+
+function make_smaller() {
+    animation_timer.style.fontSize = "2rem";
 }

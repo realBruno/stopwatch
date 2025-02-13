@@ -9,38 +9,40 @@
     <!-- RUBIK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
     <!-- RUBIK MONO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/icon.png">
 </head>
 
 <body>
-    
+
     <header id="mode">
-            <button id="dark" onclick="dark_mode()">Dark</button>
+        <button id="dark" onclick="dark_mode()">Dark</button>
     </header>
 
     <main>
-        
+
         <div id="timer">
             <h1 id="time">00:00:00.00</h1>
         </div>
-        
+
         <div id="div_buttons">
-            <button class="lgt" id="start" onclick="start()">Start</button>
-            <button class="lgt" id="reset" onclick="reset()">Reset</button>
-             <!--
+            <button class="lgt" id="start" onclick="start(); make_bigger();">Start</button>
+            <button class="lgt" id="reset" onclick="reset(); make_smaller();">Reset</button>
+            <!--
                 lgt: light (mode) | drk: dark (mode)
                 drk class will be added when user toggles dark mode
              -->
         </div>
-        
+
     </main>
 
     <script src="script.js"></script>

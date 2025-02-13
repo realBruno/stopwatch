@@ -30,7 +30,8 @@ main
     color: rgb(250, 50, 117);
     display: flex;
     font-family: "Rubik", serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    transition: all 0.7s;
 }
 
 #time
