@@ -122,10 +122,10 @@ function light_mode() {
 const animation_timer = document.getElementById("time");
 function make_bigger() {
     const media_440 = window.matchMedia("(max-width: 440px)");
-    const media_350 = window.matchMedia("(max-width: 350px)");
+    const media_360 = window.matchMedia("(max-width: 360px)");
 
     /* handles media queries */
-    if (media_350.matches)
+    if (media_360.matches)
         animation_timer.style.fontSize = "1.6em";
     else if (media_440.matches)
         animation_timer.style.fontSize = "2em";
@@ -135,10 +135,10 @@ function make_bigger() {
 
 function make_smaller() {
     const media_440 = window.matchMedia("(max-width: 440px)");
-    const media_350 = window.matchMedia("(max-width: 350px)");
+    const media_360 = window.matchMedia("(max-width: 360px)");
     
     /* handles media queries */
-    if (media_350.matches)
+    if (media_360.matches)
         animation_timer.style.fontSize = "1.4em";
     else if (media_440.matches)
         animation_timer.style.fontSize = "1.7em";
