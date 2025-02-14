@@ -31,13 +31,13 @@ main
     display: flex;
     font-family: "Rubik", serif;
     font-size: 2rem;
-    transition: all 0.7s;
 }
 
 #time
 {
     font-family: "Poppins", sans-serif;
     font-weight: 1000;
+    transition: all 0.7s;
 }
 
 /* ************* TIMER BUTTONS ************* */
@@ -154,9 +154,9 @@ button:focus, button:active
 
 @media(max-width: 440px)
 {   
-    #timer
+    h1
     {
-        font-size: 1.7rem;
+        font-size: 1.7em;
     }
 
     .lgt, .drk
@@ -171,7 +171,7 @@ button:focus, button:active
 {   
     #timer
     {
-        font-size: 1.5rem;
+        font-size: 1.4em;
     }
 
     .lgt, .drk

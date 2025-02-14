@@ -7,7 +7,7 @@ function start() {
     timer = setInterval(update, 10);
 
     const make_it_stop = document.getElementById("start");
-    make_it_stop.setAttribute("onclick", "stop(); make_bigger();");
+    make_it_stop.setAttribute("onclick", "stop()");
     make_it_stop.id = "stop";
     make_it_stop.innerHTML = "Stop";
 }
@@ -15,7 +15,7 @@ function start() {
 function stop() {
     clearInterval(timer);
     elapsed = Date.now() - start_time;
-
+    
     const make_it_start = document.getElementById("stop");
     make_it_start.setAttribute("onclick", "start(); make_bigger();");
     make_it_start.id = "start";
@@ -27,7 +27,7 @@ function reset() {
     start_time = 0;
     elapsed = 0;
     time.textContent = `00:00:00.00`;
-
+    
     const change_stop_to_start = document.getElementById("stop");
     if (change_stop_to_start) {
         change_stop_to_start.setAttribute("onclick", "start(); make_bigger();");
@@ -40,17 +40,17 @@ function reset() {
 function update() {
     const current_time = Date.now();
     elapsed = current_time - start_time;
-
+    
     let hours = Math.floor(elapsed / (1000 * 60 * 60)),
-        minutes = Math.floor(elapsed / (1000 * 60) % 60),
-        seconds = Math.floor(elapsed / 1000 % 60),
-        milliseconds = Math.floor(elapsed % 1000 / 10);
-
+    minutes = Math.floor(elapsed / (1000 * 60) % 60),
+    seconds = Math.floor(elapsed / 1000 % 60),
+    milliseconds = Math.floor(elapsed % 1000 / 10);
+    
     hours = String(hours).padStart("2", 0);
     minutes = String(minutes).padStart("2", 0);
     seconds = String(seconds).padStart("2", 0);
     milliseconds = String(milliseconds).padStart("2", 0);
-
+    
     time.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
@@ -119,28 +119,29 @@ function light_mode() {
 }
 
 /* ************* TIMER ANIMATION ************* */
-const animation_timer = document.getElementById("timer");
+const animation_timer = document.getElementById("time");
 function make_bigger() {
     const media_440 = window.matchMedia("(max-width: 440px)");
     const media_350 = window.matchMedia("(max-width: 350px)");
 
     /* handles media queries */
-    if (media_440)
-        animation_timer.style.fontSize = "2rem";
-    else if (media_350)
-        animation_timer.style.fontSize = "1.6rem";
+    if (media_350.matches)
+        animation_timer.style.fontSize = "1.6em";
+    else if (media_440.matches)
+        animation_timer.style.fontSize = "2em";
     else
-        animation_timer.style.fontSize = "2.5rem";       
+        animation_timer.style.fontSize = "2.5em";
 }
 
 function make_smaller() {
     const media_440 = window.matchMedia("(max-width: 440px)");
     const media_350 = window.matchMedia("(max-width: 350px)");
+    
     /* handles media queries */
-    if (media_440)
-        animation_timer.style.fontSize = "1.7rem";
-    else if (media_350)
-        animation_timer.style.fontSize = "1.5rem";
+    if (media_350.matches)
+        animation_timer.style.fontSize = "1.4em";
+    else if (media_440.matches)
+        animation_timer.style.fontSize = "1.7em";
     else
-        animation_timer.style.fontSize = "2rem";
+        animation_timer.style.fontSize = "2em";
 }
